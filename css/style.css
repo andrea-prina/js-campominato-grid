@@ -10,9 +10,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3vh;
 }
 
+.viewport-text {
+    font-size: 3vh;
+}
 
 .ms_grid-container, .ms_grid-element {
     border: 1px solid black;

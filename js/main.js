@@ -4,18 +4,22 @@
 // Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emetto un messaggio in console con il numero della cella cliccata.
 
 const CELLS_NUMBER = 100;
-const gridContainer = document.querySelector(".ms_grid-container")
+const gridContainer = document.querySelector(".ms_grid-container");
+const playButton = document.getElementById("play-button");
+
+
+playButton.addEventListener("click", function(){
+    console.log("Sono stato clickato");
+})
 
 for(let i = 1; i<= CELLS_NUMBER; i++){
     const gridElement = document.createElement("div");
-    gridElement.classList.add("ms_grid-element");
+    gridElement.classList.add("ms_grid-element", "viewport-text");
     gridElement.innerHTML = i;
     toggleColor(gridElement);
     logInnerHtml(gridElement);
     gridContainer.append(gridElement);
 }
-
-
 
 
 function toggleColor (htmlElement){
