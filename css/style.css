@@ -1,0 +1,14 @@
+.squared-container {
+    height: 80vh;
+    width: 80vh;
+    margin: 0 auto;
+}
+
+.square-grid-element {
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+}
+
+.squared-container, .square-grid-element {
+    border: 1px solid black;
+}
