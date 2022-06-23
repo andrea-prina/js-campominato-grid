@@ -1,6 +1,6 @@
-const CELLS_NUMBER = 100;
 const gridContainer = document.querySelector(".ms_grid-container");
 const playButton = document.getElementById("play-button");
+const difficultySelect = document.getElementById("difficulty-selection");
 
 
 playButton.addEventListener("click", function(){
@@ -12,14 +12,35 @@ playButton.addEventListener("click", function(){
 })
 
 
-// Create a grid (according to the CELLS_NUMBER) with ordered numbers from 1 to CELLS_NUMBER
+// Create a grid (according to the difficulty)
 function createGrid(){
 
     const temporaryDiv = document.createElement("div");
+    const gameDifficulty = difficultySelect.value;
 
-    for(let i = 1; i<= CELLS_NUMBER; i++){
+    let cellsNumber;
+    let gridType;
+
+    switch(gameDifficulty){
+        case "Easy":
+            cellsNumber = 100;
+            gridType = "easy-grid";
+            break;
+
+        case "Medium":
+            cellsNumber = 81;
+            gridType = "medium-grid";
+            break;
+
+        case "Hard":
+            cellsNumber = 49;
+            gridType = "hard-grid";
+            break;
+    }
+    
+    for(let i = 1; i<= cellsNumber; i++){
         const gridElement = document.createElement("div");
-        gridElement.classList.add("ms_grid-element", "viewport-text");
+        gridElement.classList.add("ms_grid-element", gridType);
         gridElement.innerHTML = i;
         temporaryDiv.append(gridElement);
     }

@@ -1,20 +1,43 @@
+/* HEADER */
+header, footer {
+    background-color: darkslateblue;
+    color: white;
+    height: 50px;
+}
+
+.logo {
+    font-size: 1.8rem;
+}
+
+/* MAIN */
 .ms_grid-container {
-    height: 80vh;
-    width: 80vh;
-    margin: 0 auto;
+    /* TODO Sistemare dimensioni (anche header e footer */
+    height: calc(90vh - 125px);
+    width: calc(90vh - 125px);
+    margin: 50px auto;
 }
 
 .ms_grid-element {
-    width: calc(100% / 10);
-    height: calc(100% / 10);
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    font-size: 3vh;
 }
 
-.viewport-text {
-    font-size: 3vh;
+.easy-grid {
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+}
+
+.medium-grid {
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+}
+
+.hard-grid {
+    width: calc(100% / 7);
+    height: calc(100% / 7);
 }
 
 .ms_grid-container, .ms_grid-element {
@@ -22,5 +45,6 @@
 }
 
 .ms_active-element {
-    background-color: aqua;
+    background-color: slateblue;
+    color: white;
 }
