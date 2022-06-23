@@ -1,34 +1,42 @@
-// L'utente clicca su un bottone che genererà una griglia di gioco quadrata.
-// Ogni cella ha un numero progressivo, da 1 a 100.
-// Ci saranno quindi 10 caselle per ognuna delle 10 righe.
-// Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emetto un messaggio in console con il numero della cella cliccata.
-
 const CELLS_NUMBER = 100;
 const gridContainer = document.querySelector(".ms_grid-container");
 const playButton = document.getElementById("play-button");
 
 
 playButton.addEventListener("click", function(){
-    console.log("Sono stato clickato");
+    gridContainer.innerHTML = createGrid();
+    for (let i = 0; i < gridContainer.children.length; i++){
+        onClickToggleColor(gridContainer.children[i]);
+        onClicklogInnerHtml(gridContainer.children[i]);
+    }
 })
 
-for(let i = 1; i<= CELLS_NUMBER; i++){
-    const gridElement = document.createElement("div");
-    gridElement.classList.add("ms_grid-element", "viewport-text");
-    gridElement.innerHTML = i;
-    toggleColor(gridElement);
-    logInnerHtml(gridElement);
-    gridContainer.append(gridElement);
+
+// Create a grid (according to the CELLS_NUMBER) with ordered numbers from 1 to CELLS_NUMBER
+function createGrid(){
+
+    const temporaryDiv = document.createElement("div");
+
+    for(let i = 1; i<= CELLS_NUMBER; i++){
+        const gridElement = document.createElement("div");
+        gridElement.classList.add("ms_grid-element", "viewport-text");
+        gridElement.innerHTML = i;
+        temporaryDiv.append(gridElement);
+    }
+
+    return temporaryDiv.innerHTML;
 }
 
 
-function toggleColor (htmlElement){
+// On click, toggle change of cell color
+function onClickToggleColor (htmlElement){
     htmlElement.addEventListener("click", function(){
         htmlElement.classList.toggle("ms_active-element");
     });
 }
 
-function logInnerHtml (htmlElement){
+// On click, if the cell is turned active, log the value in the console
+function onClicklogInnerHtml (htmlElement){
     htmlElement.addEventListener("click", function(){
         if(htmlElement.classList.contains("ms_active-element")){
             console.log(htmlElement.innerHTML);
