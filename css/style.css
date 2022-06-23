@@ -7,8 +7,17 @@
 .ms_grid-element {
     width: calc(100% / 10);
     height: calc(100% / 10);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3vh;
 }
+
 
 .ms_grid-container, .ms_grid-element {
     border: 1px solid black;
+}
+
+.ms_active-element {
+    background-color: aqua;
 }

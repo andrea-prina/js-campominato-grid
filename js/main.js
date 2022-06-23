@@ -9,5 +9,25 @@ const gridContainer = document.querySelector(".ms_grid-container")
 for(let i = 1; i<= CELLS_NUMBER; i++){
     const gridElement = document.createElement("div");
     gridElement.classList.add("ms_grid-element");
+    gridElement.innerHTML = i;
+    toggleColor(gridElement);
+    logInnerHtml(gridElement);
     gridContainer.append(gridElement);
+}
+
+
+
+
+function toggleColor (htmlElement){
+    htmlElement.addEventListener("click", function(){
+        htmlElement.classList.toggle("ms_active-element");
+    });
+}
+
+function logInnerHtml (htmlElement){
+    htmlElement.addEventListener("click", function(){
+        if(htmlElement.classList.contains("ms_active-element")){
+            console.log(htmlElement.innerHTML);
+        }
+    })
 }
