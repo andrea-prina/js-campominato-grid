@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
+
 /* HEADER */
 header, footer {
     background-color: darkslateblue;
@@ -5,15 +7,24 @@ header, footer {
     height: 50px;
 }
 
+header h1 {
+    font-family: 'Fascinate', cursive;
+}
+
 .logo {
     font-size: 1.8rem;
+}
+
+.hard-sized {
+    height: 35px;
+    width: 100px;
 }
 
 /* MAIN */
 .ms_grid-container {
     /* TODO Sistemare dimensioni (anche header e footer */
-    height: calc(90vh - 125px);
-    width: calc(90vh - 125px);
+    height: calc(90vh - 129px);
+    width: calc(90vh - 129px);
     margin: 50px auto;
 }
 
@@ -41,10 +52,11 @@ header, footer {
 }
 
 .ms_grid-container, .ms_grid-element {
-    border: 1px solid black;
+    border: 0.5px solid black;
 }
 
 .ms_active-element {
-    background-color: slateblue;
+    background-color: orange;
     color: white;
+    font-weight: bolder;
 }
